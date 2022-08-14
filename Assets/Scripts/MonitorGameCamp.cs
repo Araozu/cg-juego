@@ -1,8 +1,17 @@
 using UnityEngine;
 
+/**
+ * Este script maneja la rotacion de un GameObject usando el giroscopio.
+ * Se debe colocar en un Game Object que tenga como hijos:
+ * - El mapa, para rotarlo
+ * - La camara, para rotarla junto con el mapa y dar sensacion 2d
+ */
 public class MonitorGameCamp : MonoBehaviour
 {
     public float sensitivity = 10.0f;
+
+    // rotacion en el frame anterior
+    private Quaternion _rotacionAnterior;
 
     //Datos de entrada
     private Vector2 _mouseDelta = Vector2.zero;
@@ -50,7 +59,18 @@ public class MonitorGameCamp : MonoBehaviour
     {
         var gyro = GyroToUnity(Input.gyro.attitude);
 
-        transform.rotation = gyro;
+        // Actualizar la rotacion segun el cambio, no la posicion del sensor
+        // Diferencia entre quaternion anterior y quaternion nuevo
+        var nuevaRotacion = _rotacionAnterior * Quaternion.Inverse(gyro);
+
+        if (nuevaRotacion.x <= 0 && nuevaRotacion.y <= 0 && nuevaRotacion.z <= 0 && nuevaRotacion.w <= 0)
+        {
+            return;
+        }
+
+        // Sumar la diferencia entre rotaciones a la rotacion del game object si hay rotacion
+        Debug.Log("Dif:" + nuevaRotacion);
+        transform.rotation *= nuevaRotacion;
     }
 
     // Convierte espacio del celular a espacio de Unity
