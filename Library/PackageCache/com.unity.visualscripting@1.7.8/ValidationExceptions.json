@@ -1,9 +1,8 @@
 {
-    "ErrorExceptions":
-    [
-        {
-             "ValidationTest": "API Validation",
-             "PackageVersion": "1.7.8"
-        }
-    ]
+  "ErrorExceptions": [
+    {
+      "ValidationTest": "API Validation",
+      "PackageVersion": "1.7.8"
+    }
+  ]
 }

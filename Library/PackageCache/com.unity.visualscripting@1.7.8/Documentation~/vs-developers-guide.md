@@ -1,7 +1,5 @@
 # Developer's guide
 
-
-
 ## _Misc
 
 | Node                         | Description                                                  |
@@ -30,8 +28,6 @@
 | SetSceneVariable             | Sets a scene variable by name.                               |
 | SetVariable                  | Sets a variable by name.                                     |
 
-
-
 ## Collections
 
 | Node       | Description                                                |
@@ -39,8 +35,6 @@
 | CountItems | Provides a count of the number of items in the collection. |
 | FirstItem  | Gets a reference to the first item in the collections.     |
 | LastItem   | Gets a reference to the last item in the collection.       |
-
-
 
 ### Collections, Dictionaries
 
@@ -54,8 +48,6 @@
 | MergeDictionaries     | Combines the contents of two dictionaries into a single dictionary. |
 | RemoveDictionaryItem  | Removes an entry from the dictionary with the provided key.  |
 | SetDictionaryItem     | Replaces the value of an existing entry with the provided key. |
-
-
 
 ### Collections, Lists
 
@@ -71,8 +63,6 @@
 | RemoveListItem   | Removes the item from the list (if it is present).           |
 | RemoveListItemAt | Removes the item from the list that is at the specified position provided by the index. |
 | SetListItem      | Replaces the item in the list with a new item at the specified position provided by the index. |
-
-
 
 ## Control
 
@@ -99,15 +89,11 @@
 | TryCatch             | Executes the Try branch. If an exception occurs in that branch, execute the Catch branch. Once the Try branch completes without exceptions or the Catch branch completes, the Finally branch is executed. |
 | While                | Executes the Body branch. Repeat this step as long as the provide condition is true. When that condition is no longer true, execute the Exit branch. |
 
-
-
 ## Events
 
 | Node               | Description                      |
 | ------------------ | -------------------------------- |
 | TriggerCustomEvent | Triggers a custom event by name. |
-
-
 
 ## Logic
 
@@ -125,8 +111,6 @@
 | NotEqual       | The not equal to operator (equivalent to. !=) returns true if the operands don't have the same value; otherwise, it returns false. |
 | Or             | Logical OR (equivalent to \|\|) returns true if either or both operands is true and returns false otherwise. |
 
-
-
 ## Math, Generic
 
 | Node     | Description                     |
@@ -136,8 +120,6 @@
 | Modulo   | Calls the % operator on inputs. |
 | Multiply | Call the * operator on inputs.  |
 | Subtract | Calls the - operator on inputs. |
-
-
 
 ## Math, Scalar
 
@@ -160,8 +142,6 @@
 | Round        | Rounds a float - ceil, floor or closest integer.             |
 | Subtract     | Subtracts the first float from the second float and returns the result. |
 | Sum          | Sum of multiple floats.                                      |
-
-
 
 ## Math, Vector2
 
@@ -187,8 +167,6 @@
 | Subtract    | Subtracts one Vector2 value from another Vector2 value.      |
 | Sum         | Adds two Vector2 values.                                     |
 
-
-
 ## Math, Vector3
 
 | Node        | Description                                                  |
@@ -212,8 +190,6 @@
 | Round       | Rounds the components of a Vector3 to closest integer value. |
 | Subtract    | Subtracts one Vector3 value from another Vector3 value.      |
 | Sum         | Adds two Vector3 values.                                     |
-
-
 
 ## Math, Vector4
 
@@ -239,8 +215,6 @@
 | Subtract    | Subtracts one Vector4 value from another Vector4 value.      |
 | Sum         | Adds two Vector4 values.                                     |
 
-
-
 ## Nesting
 
 | Node                   | Description                                                  |
@@ -251,8 +225,6 @@
 | Subgraph             | References another flow graph as a Subgraph in the current graph. |
 | TriggerStateTransition | In a transition graph, triggers the transition to the target graph in the parent state machine graph. |
 
-
-
 ## Nulls
 
 | Node         | Description                                                  |
@@ -260,8 +232,6 @@
 | Null         | Null literal.                                                |
 | NullCheck    | Branching based on the input value being null.               |
 | NullCoalesce | Returns the input value or a default value if the input value is null. |
-
-
 
 ## Time
 
@@ -276,15 +246,11 @@
 | WaitUntilUnit         | Coroutine node that returns new WaitUntill(() => value).     |
 | WaitWhileUnit         | Coroutine node that returns new WaitUntill(() => !value).    |
 
-
-
 ## Variables
 
 | Node          | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | SaveVariables | Forces saved variables to be saved to the PlayerPrefs (this is useful on platforms that do not support automatic save on quit). |
-
-
 
 ## Events
 
@@ -293,9 +259,7 @@
 | UnityEvent  | Called when a UnityEvent is pointed to TriggerUnityEvent. |
 | CustomEvent | Bolt's custom events, defined by name.                    |
 
-
-
-### Events, Animation 
+### Events, Animation
 
 | Node                  | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
@@ -303,8 +267,6 @@
 | Named Animation Event | Called when an animation event points to TriggerAnimationEvent. This version allows you to use the string parameter as the event name. |
 | OnAnimatorIK          | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnAnimatorIK.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnAnimatorIK.html) |
 | OnAnimatorMove        | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnAnimatorMove.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnAnimatorMove.html) |
-
-
 
 ### Events, Application
 
@@ -316,16 +278,12 @@
 | OnpplicationQuit       | [https://docs.unity3d.com/ScriptReference/<br />MonoBehaviour.OnApplicationQuit.html](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnApplicationQuit.html) |
 | OnApplicationResume    | Implements <br />[https://docs.unity3d.com/ScriptReference/<br />MonoBehaviour.OnApplicationPause.html](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnApplicationPause.html) |
 
-
-
 ### Events, Editor
 
 | Node                 | Description                                                  |
 | -------------------- | ------------------------------------------------------------ |
 | OnDrawGizmos         | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnDrawGizmos.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnDrawGizmos.html) |
 | OnDrawGizmosSelected | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnDrawGizmosSelected.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnDrawGizmosSelected.html) |
-
-
 
 ### Events, GUI
 
@@ -363,8 +321,6 @@
 | OnTransformChildrenChanged | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTransformChildrenChanged.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTransformChildrenChanged.html) |
 | OnTransformParentChanged   | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTransformParentChanged.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) |
 
-
-
 ### Events, Input
 
 | Node              | Description                                                  |
@@ -380,8 +336,6 @@
 | OnMouseUp         | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnMouseUp.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnMouseUp.html) |
 | OnMouseUpAsButton | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnMouseUpAsButton.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnMouseUpAsButton.html) |
 
-
-
 ### Events, Lifecycle
 
 | Node        | Description                                                  |
@@ -394,15 +348,11 @@
 | Start       | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.Start.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.Start.html) |
 | Update      | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.Update.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.Start.html) |
 
-
-
 ### Events, Navigation
 
 | Node                 | Description                                                  |
 | -------------------- | ------------------------------------------------------------ |
 | OnDestinationReached | Trigger if a NavMeshAgent's remaining distance to its target is less than the provided threshold and either has a current NavMeshPathStatus of PathComplete or requireSuccess is false. <br />[https://docs.unity3d.com/2019.1/Documentation/ScriptReference/<br />AI.NavMeshAgent.html](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/AI.NavMeshAgent.html). |
-
-
 
 ### Events, Physics
 
@@ -418,8 +368,6 @@
 | OnTriggerExit           | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTriggerExit.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTriggerExit.html) |
 | OnTriggerStay           | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTriggerStay.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTriggerStay.html) |
 
-
-
 ### Events, Physics 2D
 
 | Node                      | Description                                                  |
@@ -434,16 +382,12 @@
 | OnTriggerExit2D           | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTriggerExit2D.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTriggerExit2D.html) |
 | OnTriggerStay2D           | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnTriggerStay2D.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnTriggerStay2D.html) |
 
-
-
 ### Events, Rendering
 
 | Node              | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | OnBecameInvisible | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnBecameInvisible.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnBecameInvisible.html) |
 | OnBecameVisible   | [https://docs.unity3d.com/2021.1/Documentation/ScriptReference/<br />MonoBehaviour.OnBecameVisible.html](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/MonoBehaviour.OnBecameVisible.html) |
-
-
 
 ### Events, State
 

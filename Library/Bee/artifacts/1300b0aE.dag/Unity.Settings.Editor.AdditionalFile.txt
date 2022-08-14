@@ -1,1 +1,1 @@
-/home/estephany/ProyectoUnity/ProyectoCGrafica
+/home/fernando/programmation/unity/ProyectoCG
