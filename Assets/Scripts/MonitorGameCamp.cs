@@ -54,7 +54,7 @@ public class MonitorGameCamp : MonoBehaviour
             return;
         }
 
-        // Debug.Log(rotationActual + " - " + diferenciaRotacion);
+        // Debug.Log( _rotacionInicial + " : " + rotationActual + " - " + diferenciaRotacion);
 
         _rigidbody.AddForce(diferenciaRotacion * fuerza, ForceMode.Acceleration);
     }
