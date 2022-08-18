@@ -1,32 +1,27 @@
+using System;
+using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
 
-/**
- * Este script maneja la rotacion de un GameObject usando el giroscopio.
- * Se debe colocar en un Game Object que tenga como hijos:
- * - El mapa, para rotarlo
- * - La camara, para rotarla junto con el mapa y dar sensacion 2d
- */
 public class MonitorGameCamp : MonoBehaviour
 {
     public float sensitivity = 10.0f;
 
     // rotacion en el frame anterior
-    private Quaternion _rotacionAnterior;
+    private Vector3? _rotacionInicial = null;
 
     //Datos de entrada
+    public float fuerza = 1;
     private Vector2 _mouseDelta = Vector2.zero;
     private Vector2 _amount = Vector2.zero;
-    public float limitMinY = -45;
-    public float limitMaxY = 45;
-    public float limitMinX = -45;
-    public float limitMaxX = 45;
+
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
-        Input.gyro.enabled = true;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         //Asi clic en la tecla espacio reiniciamos la rotacion
@@ -38,45 +33,67 @@ public class MonitorGameCamp : MonoBehaviour
         ComputeRotationWithSensor();
     }
 
-    private void ComputeRotationWithMouse()
-    {
-        //Asignamos a mouseDelta los desplazamientos del raton en cada cuadro de animacion  
-        _mouseDelta.Set(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        //Escalamos ese desplazamiento con la sensitivity y acumulamos
-        _amount += _mouseDelta * sensitivity;
-        // Tambien estamos restringiendo el giro en alguno de el eje y
-        _amount.y = (_amount.y > 180) ? _amount.y - 360 : _amount.y;
-        _amount.y = Mathf.Clamp(_amount.y, limitMinY, limitMaxY);
-        // Tambien estamos restringiendo el giro en alguno de el eje x
-        _amount.x = (_amount.x > 180) ? _amount.x - 360 : _amount.x;
-        _amount.x = Mathf.Clamp(_amount.x, limitMinX, limitMaxX);
-
-        //Creamos rotacion en el eje horizontal, vertical y lueg lo juntamos
-        transform.rotation = Quaternion.AngleAxis(_amount.y, Vector3.up) * Quaternion.AngleAxis(_amount.x, Vector3.back);
-    }
-
     private void ComputeRotationWithSensor()
     {
-        var gyro = GyroToUnity(Input.gyro.attitude);
+        var rotationActual = Fix(DeviceRotation.Get().eulerAngles);
 
-        // Actualizar la rotacion segun el cambio, no la posicion del sensor
-        // Diferencia entre quaternion anterior y quaternion nuevo
-        var nuevaRotacion = _rotacionAnterior * Quaternion.Inverse(gyro);
+        // La rotacion en el frame inicial es el punto de referencia
+        if (_rotacionInicial == null)
+        {
+            _rotacionInicial = rotationActual;
+            return;
+        }
 
-        if (nuevaRotacion.x <= 0 && nuevaRotacion.y <= 0 && nuevaRotacion.z <= 0 && nuevaRotacion.w <= 0)
+        var diferenciaRotacion = Dif(_rotacionInicial.Value, rotationActual);
+
+        if (diferenciaRotacion.x is <= 1 and >= -1 
+            && diferenciaRotacion.y is <= 1 and >= -1 
+            && diferenciaRotacion.z is <= 1 and >= -1
+            )
         {
             return;
         }
 
-        // Sumar la diferencia entre rotaciones a la rotacion del game object si hay rotacion
-        Debug.Log("Dif:" + nuevaRotacion);
-        transform.rotation *= nuevaRotacion;
+        // Debug.Log(rotationActual + " - " + diferenciaRotacion);
+
+        _rigidbody.AddForce(diferenciaRotacion * fuerza, ForceMode.Acceleration);
     }
 
     // Convierte espacio del celular a espacio de Unity
     private static Quaternion GyroToUnity(Quaternion q)
     {
         return Quaternion.Euler(90, 0, 0) * new Quaternion(q.x, q.y, -q.z, -q.w);
+    }
+
+    private static Vector3 Fix(Vector3 input)
+    {
+        var x = input.x;
+        var z = input.z;
+
+        if (x > 180)
+        {
+            x = (x - 180) - 180;
+        }
+        if (x < -180)
+        {
+            x = (180 - x) + 180;
+        }
+
+        if (z > 180)
+        {
+            z = (z - 180) - 180;
+        }
+        if (z < -180)
+        {
+            z = (180 - z) + 180;
+        }
+
+        return new Vector3(z, 0, -x);
+    }
+    
+    private static Vector3 Dif(Vector3 v1, Vector3 v2)
+    {
+        return new Vector3(v1.x - v2.x, 0, v1.z - v2.z);
     }
 
 }
