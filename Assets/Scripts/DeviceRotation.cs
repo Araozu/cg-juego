@@ -1,43 +1,40 @@
 using UnityEngine;
 
-namespace DefaultNamespace
+public static class DeviceRotation
 {
-    public static class DeviceRotation
+    private static bool gyroInitialized = false;
+
+    public static bool HasGyroscope
     {
-        private static bool gyroInitialized = false;
-
-        public static bool HasGyroscope
+        get
         {
-            get
-            {
-                return SystemInfo.supportsGyroscope;
-            }
+            return SystemInfo.supportsGyroscope;
+        }
+    }
+
+    public static Quaternion Get()
+    {
+        if (!gyroInitialized)
+        {
+            InitGyro();
         }
 
-        public static Quaternion Get()
-        {
-            if (!gyroInitialized)
-            {
-                InitGyro();
-            }
+        return HasGyroscope ? ReadGyroscopeRotation() : Quaternion.identity;
+    }
 
-            return HasGyroscope ? ReadGyroscopeRotation() : Quaternion.identity;
+    private static void InitGyro()
+    {
+        if (HasGyroscope)
+        {
+            Input.gyro.enabled = true;
+            Input.gyro.updateInterval = 0.0234f;
         }
 
-        private static void InitGyro()
-        {
-            if (HasGyroscope)
-            {
-                Input.gyro.enabled = true;
-                Input.gyro.updateInterval = 0.0234f;
-            }
+        gyroInitialized = true;
+    }
 
-            gyroInitialized = true;
-        }
-
-        private static Quaternion ReadGyroscopeRotation()
-        {
-            return new Quaternion(0.5f, 0.5f, -0.5f, 0.5f) * Input.gyro.attitude * new Quaternion(0, 0, 1, 0);
-        }
+    private static Quaternion ReadGyroscopeRotation()
+    {
+        return new Quaternion(0.5f, 0.5f, -0.5f, 0.5f) * Input.gyro.attitude * new Quaternion(0, 0, 1, 0);
     }
 }
