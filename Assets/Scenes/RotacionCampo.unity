@@ -1051,7 +1051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2651,7 +2651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -3269,7 +3269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4159,7 +4159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6452,7 +6452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6829,7 +6829,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527228144}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 77349676ae5c8d24e8f6d75f7f0d9e5b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -6855,7 +6855,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0730a96e1161e61d82abf3ff2d22f94, type: 2}
+  - {fileID: 2100000, guid: 195c95f950e2426c68abf64442941a1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7096,7 +7096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10558,7 +10558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10911,7 +10911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.033882
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11189,7 +11189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9438756
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2801795971886332249, guid: 9c0c7eaad96767b91ba36abafeca4e29, type: 3}
       propertyPath: m_LocalPosition.z
