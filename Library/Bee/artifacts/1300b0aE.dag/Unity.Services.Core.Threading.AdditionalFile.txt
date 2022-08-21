@@ -1,1 +1,1 @@
-/home/estephany/cg-juego
+/home/fernando/programmation/unity/ProyectoCG
